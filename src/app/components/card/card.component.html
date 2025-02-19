@@ -1,0 +1,80 @@
+<div class="card" [ngClass]="'card--' + data.variant">
+  <!-- Users Card -->
+  <ng-container *ngIf="isUsersCard(data)">
+    <h2 class="card__title">{{ data.title }}</h2>
+    <p class="card__description">{{ data.description }}</p>
+    
+    <div class="card__members">
+      <div class="card__member" *ngFor="let user of data.users">
+        <div class="card__member-left">
+          <img [src]="user.avatar" [alt]="user.name" class="card__member-avatar">
+          <div class="card__member-info">
+            <h3 class="card__member-name">{{ user.name }}</h3>
+            <p class="card__member-role">{{ user.role }}</p>
+          </div>
+        </div>
+        <button class="card__follow-button">FOLLOW</button>
+      </div>
+    </div>
+
+    <div class="card__footer">
+      <span class="card__students">{{ data.totalStudents }} STUDENTS</span>
+      <a class="card__view-button">VIEW ALL MEMBER</a>
+    </div>
+  </ng-container>
+
+  <!-- Profile Card -->
+  <ng-container *ngIf="isProfileCard(data)">
+    <div class="card__profile-background"></div>
+    <div class="card__profile-content">
+      <div class="card__avatar-container">
+        <div class="card__avatar-outer-circle"></div>
+        <div class="card__avatar-ring">
+          <div class="card__avatar-circle">
+            <img [src]="data.avatar" [alt]="data.name" class="card__avatar">
+          </div>
+        </div>
+      </div>
+      <div class="card__name">{{ data.name }}</div>
+      <div class="card__role">{{ data.role }}</div>
+      <div class="card__buttons">
+        <button class="card__button">{{ data.button1 }}</button>
+        <button class="card__button">{{ data.button2 }}</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Product Card -->
+  <ng-container *ngIf="isProductCard(data)">
+    <div class="card__header">
+      <h2 class="card__title">{{ data.title }}</h2>
+      <div class="card__icons">
+        <div class="card__icon card__icon--leaf">
+          <img [src]="data.icons[0]" alt="Leaf icon">
+        </div>
+        <div class="card__icon card__icon--fire">
+          <img [src]="data.icons[1]" alt="Fire icon">
+        </div>
+      </div>
+    </div>
+    <img [src]="data.image" [alt]="data.title" class="card__product-image">
+    <p class="card__description">{{ data.description }}</p>
+    <div class="card__footer">
+      <div class="card__prices">
+        <span class="card__price">${{ data.currentPrice.toFixed(2) }}</span>
+        <span class="card__price--old">${{ data.oldPrice.toFixed(2) }}</span>
+      </div>
+      <button class="card__order-button">ORDER NOW</button>
+    </div>
+  </ng-container>
+
+  <!-- Art Card -->
+  <ng-container *ngIf="isArtCard(data)">
+    <img [src]="data.image" [alt]="data.title" class="card__art-image">
+    <div class="card__art-content">
+      <h2 class="card__art-title">{{ data.title }}</h2>
+      <p class="card__art-description">{{ data.description }}</p>
+      <button class="card__art-button">ACTION NOW</button>
+    </div>
+  </ng-container>
+</div>
