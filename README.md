@@ -10,13 +10,6 @@ Proyecto desarrollado por Juan C. Lange en Angular que implementa un sistema de 
 - TypeScript con interfaces estrictas
 - Diseño responsive
 
-## Variantes de Tarjetas
-
-1. Users Card (636px)
-2. Profile Card (405px)
-3. Product Card (492px)
-4. Art Card (542px)
-
 ## Requisitos Previos
 
 - Node.js (versión recomendada: 18.x o superior)
