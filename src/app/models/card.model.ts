@@ -1,9 +1,7 @@
-// Interfaz base para todas las tarjetas
 export interface CardBase {
   variant: 'users' | 'profile' | 'product' | 'art';
 }
 
-// Props específicos para la tarjeta de usuarios
 export interface UsersCard extends CardBase {
   variant: 'users';
   title: string;
@@ -16,7 +14,6 @@ export interface UsersCard extends CardBase {
   totalStudents: number;
 }
 
-// Props específicos para la tarjeta de perfil
 export interface ProfileCard extends CardBase {
   variant: 'profile';
   name: string;
@@ -28,7 +25,6 @@ export interface ProfileCard extends CardBase {
   button2: string;
 }
 
-// Props específicos para la tarjeta de producto
 export interface ProductCard extends CardBase {
   variant: 'product';
   title: string;
@@ -39,7 +35,6 @@ export interface ProductCard extends CardBase {
   icons: string[];
 }
 
-// Props específicos para la tarjeta de arte
 export interface ArtCard extends CardBase {
   variant: 'art';
   title: string;
@@ -47,5 +42,4 @@ export interface ArtCard extends CardBase {
   image: string;
 }
 
-// Tipo unión que representa todos los tipos posibles de tarjeta
 export type Card = UsersCard | ProfileCard | ProductCard | ArtCard;

@@ -16,19 +16,23 @@ export class CardComponent {
     return this.data.variant;
   }
 
+  private checkCardType<T extends Card>(card: Card, variant: T['variant']): card is T {
+    return card.variant === variant;
+  }
+
   isUsersCard(card: Card): card is UsersCard {
-    return card.variant === 'users';
+    return this.checkCardType<UsersCard>(card, 'users');
   }
 
   isProfileCard(card: Card): card is ProfileCard {
-    return card.variant === 'profile';
+    return this.checkCardType<ProfileCard>(card, 'profile');
   }
 
   isProductCard(card: Card): card is ProductCard {
-    return card.variant === 'product';
+    return this.checkCardType<ProductCard>(card, 'product');
   }
 
   isArtCard(card: Card): card is ArtCard {
-    return card.variant === 'art';
+    return this.checkCardType<ArtCard>(card, 'art');
   }
 }
