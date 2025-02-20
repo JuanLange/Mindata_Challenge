@@ -40,4 +40,4 @@ Para iniciar el servidor de desarrollo:
 ng serve
 ```
 
-Navegar a `http://localhost:4200/` en el navegador. La aplicación se recargará automáticamente si cambias alguno de los archivos fuente.
+Navegar a `http://localhost:4200/` en el navegador.
